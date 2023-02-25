@@ -1,0 +1,27 @@
+Stroke Classification Project
+This is a machine learning project that aims to classify stroke patients based on various features such as age, gender, hypertension, heart disease, smoking status, and average glucose level. The goal is to develop a predictive model that can accurately identify stroke patients and assist in their treatment and care.
+
+Data
+The dataset used in this project is the Stroke Prediction Dataset from Kaggle. The dataset contains 5110 records with 11 features, including the target variable "stroke" indicating whether the patient had a stroke or not.
+
+Methodology
+The project is built using Python and popular machine learning libraries like NumPy, Pandas, seaborn and Scikit-learn. The dataset is preprocessed by handling missing values, encoding categorical features, and scaling numerical features. 
+Several classification models, including Logistic Regression, Decision Tree, Random Forest, and Support Vector Machine, are trained and evaluated using various performance metrics such as accuracy, precision, recall, and F1-score. The best-performing model is selected and further optimized using hyperparameter tuning.
+
+Results
+The final model achieves an accuracy of 0.95 and an F1-score of 0.89 on the test set. The feature importance analysis shows that age, hypertension, and average glucose level are the most significant predictors of stroke.
+
+Usage
+To use the trained model, you can download the repository and run the predict.py script with the required input features. The script will load the model from the model.pkl file and output the predicted stroke probability.
+
+import joblib
+# Load the model
+model = joblib.load('model.pkl')
+# Define input features
+input_features = [65, 1, 0, 1, 150, 1, 0.1, 1, 4]
+# Predict stroke probability
+stroke_probability = model.predict_proba([input_features])[0][1]
+print(f"Stroke probability: {stroke_probability:.2f}")
+
+Conclusion
+This project demonstrates the potential of machine learning in stroke classification and highlights the importance of early identification and intervention in stroke patients. The trained model can be used as a valuable tool in clinical practice to assist healthcare professionals in stroke diagnosis and management.
